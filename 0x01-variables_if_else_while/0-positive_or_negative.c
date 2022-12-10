@@ -1,4 +1,4 @@
-nclude <stdio.h>
+#include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
 /**
@@ -6,14 +6,13 @@ nclude <stdio.h>
  * * Return: 0
  * */
 int main(void)
-{
-	        int n;
-
+{ 	      
+      	int n;
 		        srand(time(0));
 			        n = rand() - RAND_MAX / 2;
 				        if (n > 0)
 						        {
-								                printf("%li is positive\n", (long int)n);
+						                  printf("%li is positive\n", (long int)n);
 										        }
 					        else if (n == 0)
 							        {
