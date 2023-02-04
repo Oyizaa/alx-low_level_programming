@@ -1,17 +1,19 @@
 #include "main.h"
-
+#include "2-get_bit.c"
 /**
- * set_bit - sets the value of a bit to 1 at a given index.
- * @n: address of number to be updated
- * @index: position of bit to be changed to 1
- * Return: 1 if success, -1 if failed
+ * clear_bit - clears index to 0
+ * @n: integer to pass
+ * @index: index to go to
+ * Return: returns integer val
  */
-int set_bit(unsigned long int *n, unsigned int index)
+int clear_bit(unsigned long int *n, unsigned int index)
 {
-	if (index > sizeof(n) * 8)
+	if (index > 32)
 		return (-1);
 
-	*n |= 1lu << index;
+	(*n) &= ~(1 << index);
 
-	return (1);
+	if (get_bit((*n), index) == 0)
+		return (1);
+	return (-1);
 }
